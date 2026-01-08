@@ -12,6 +12,7 @@ Generate LaTeX documentation for a specific module.
 1. **Load Context**
    - Read `module/[module-name].md`
    - Validate screenshots exist in `screenshots/[module-name]/`
+   - **Check for subsections**: If module file contains `## subsections` section, use `\subsection{}` commands in output
 
 2. **Analyze Screenshots**
    - Open each image sequentially (1.jpg, 2.jpg, ...)
@@ -27,6 +28,8 @@ Generate LaTeX documentation for a specific module.
    - **Write ALL content in BAHASA INDONESIA**
    - **For FIGURE images**: use `images/pdf/[module-name].pdf` with `page=X` (X = image number)
    - **For INLINE-IMAGE**: use `images/pdf/his-v3-baru-2025.pdf` with `page=X` (X = image number)
+   - **If module has subsections defined**: Output includes `\subsection{}` for each subsection
+   - **If module has no subsections**: Use plain text without `\subsection{}`
    - Output to `sections/[module-name].md` (LaTeX code in markdown file)
 
 4. **Update Todo**

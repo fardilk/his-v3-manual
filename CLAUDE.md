@@ -72,7 +72,24 @@ Langkah-langkah melakukan [nama proses]:
     \item Langkah pertama...
 \end{itemize}
 ```
-- **NO `\subsection`** - use plain text as list introduction instead
+
+### Subsections (Conditional)
+- **Use `\subsection{}`** ONLY if module file contains `## subsections` definition
+- If no subsections are defined in module context → use plain text introduction instead
+- When subsections are defined, structure becomes:
+```latex
+\section{Main Title}
+
+\par Penjelasan modul...
+
+\subsection{Subsection Name}
+
+Langkah-langkah melakukan [proses]:
+
+\begin{itemize}
+    \item Langkah pertama...
+\end{itemize}
+```
 
 ### Itemize (Steps)
 ```latex
