@@ -53,7 +53,7 @@ Langkah-langkah melakukan pendaftaran lab:
         \label{fig:pendaftaran-kunjungan-laboratorium-6}
         \end{figure}
 
-    \item Setelah memilih pasien, data pasien akan terisi secara otomatis pada form. Selanjutnya, pilih penjamin dengan mengklik tombol $\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}}}$ pada bagian Penjamin.
+    \item Setelah memilih pasien, data pasien akan terisi secara otomatis pada form. Selanjutnya, pilih penjamin dengan mengklik tombol $\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/pendaftaran-kunjungan-laboratorium.pdf}}}$ pada bagian Penjamin.
         \begin{figure}[H]
         \centering
             \includegraphics[width=\textwidth,page=7]{images/pdf/pendaftaran-kunjungan-laboratorium.pdf}

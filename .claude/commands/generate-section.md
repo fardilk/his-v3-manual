@@ -18,8 +18,9 @@ Generate LaTeX documentation for a specific module.
    - Open each image sequentially (1.jpg, 2.jpg, ...)
    - **Check the marking at TOP of each image:**
      - **"FIGURE"** → Full width screenshot, use `\begin{figure}[H]...\end{figure}`
-     - **"INLINE-IMAGE"** → Button/icon, use `$\vcenter{\hbox{\includegraphics[height=.6cm, page=XX]{images/pdf/his-v3-baru-2025.pdf}}}$`
+     - **"INLINE-IMAGE"** → Button/icon, use `$\vcenter{\hbox{\includegraphics[height=.6cm, page=XX]{images/pdf/[module-name].pdf}}}$`
    - **For INLINE-IMAGE: page number = image number** (e.g., `009.png` → `page=9`)
+   - **Both FIGURE and INLINE-IMAGE use the same module PDF** (`images/pdf/[module-name].pdf`)
    - Identify UI state and action in each image
    - Map to flow defined in context
 
@@ -27,7 +28,7 @@ Generate LaTeX documentation for a specific module.
    - Follow standard format in CLAUDE.md
    - **Write ALL content in BAHASA INDONESIA**
    - **For FIGURE images**: use `images/pdf/[module-name].pdf` with `page=X` (X = image number)
-   - **For INLINE-IMAGE**: use `images/pdf/his-v3-baru-2025.pdf` with `page=X` (X = image number)
+   - **For INLINE-IMAGE**: use `images/pdf/[module-name].pdf` with `page=X` (X = image number) - same PDF as FIGURE
    - **If module has subsections defined**: Output includes `\subsection{}` for each subsection
    - **If module has no subsections**: Use plain text without `\subsection{}`
    - Output to `sections/[module-name].md` (LaTeX code in markdown file)

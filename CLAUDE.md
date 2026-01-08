@@ -53,11 +53,11 @@ Screenshots are marked with a label at the TOP of the image:
 #### 2. INLINE-IMAGE (Button/Icon)
 - Marked with **"INLINE-IMAGE"** at top of image
 - Used for small buttons, icons, or UI elements
-- **Uses PDF with page reference**: `images/pdf/his-v3-baru-2025.pdf`
+- **Uses PDF with page reference**: `images/pdf/[module-name].pdf` (same as FIGURE images)
 - **Page number = Image number** (e.g., `009.png` → `page=9`, `044.png` → `page=44`)
 - Format:
 ```latex
-$\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}}}$
+$\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/[module-name].pdf}}}$
 ```
 
 ### Section Structure
@@ -136,9 +136,9 @@ Langkah-langkah melakukan [proses]:
 - Example: `\includegraphics[width=\textwidth,page=5]{images/pdf/pendaftaran-kunjungan-laboratorium.pdf}`
 
 ### INLINE-IMAGE (Buttons/Icons)
-- Referenced from PDF: `images/pdf/his-v3-baru-2025.pdf`
+- **Also uses module PDF**: `images/pdf/[module-name].pdf` (same as FIGURE)
 - **Page number = Image filename number** (e.g., `009.png` → `page=9`)
-- Example: `\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}`
+- Example: `\includegraphics[height=.6cm, page=9]{images/pdf/[module-name].pdf}`
 
 ## Naming Convention
 - Module name: kebab-case (example: `radiology-visit`)
