@@ -15,9 +15,9 @@ Review generated LaTeX section for quality assurance.
 - [ ] Every figure has unique caption and label
 
 ### Image Types
-- [ ] FIGURE images use correct path: `images/[module-name]/[n].jpg`
-- [ ] INLINE-IMAGE uses PDF reference: `images/pdf/his-v3-baru-2025.pdf`
-- [ ] INLINE-IMAGE has correct `page=XX` parameter
+- [ ] FIGURE images use PDF: `images/pdf/[module-name].pdf` with correct `page=X`
+- [ ] INLINE-IMAGE uses PDF: `images/pdf/his-v3-baru-2025.pdf` with correct `page=X`
+- [ ] Page number matches image filename (e.g., `005.png` → `page=5`)
 - [ ] Image type matches the marking in source screenshot
 
 ### Content

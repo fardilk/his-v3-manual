@@ -38,11 +38,13 @@ Screenshots are marked with a label at the TOP of the image:
 #### 1. FIGURE (Full Width Screenshot)
 - Marked with **"FIGURE"** at top of image
 - Used for full UI screenshots
+- **Uses PDF with page reference**: `images/pdf/[module-name].pdf`
+- **Page number = Image number** (e.g., `001.png` → `page=1`, `012.png` → `page=12`)
 - Format:
 ```latex
 \begin{figure}[H]
 \centering
-    \includegraphics[width=\textwidth]{images/[module-name]/[number].jpg}
+    \includegraphics[width=\textwidth,page=1]{images/pdf/[module-name].pdf}
 \caption{Deskripsi gambar dalam Bahasa Indonesia}
 \label{fig:[module-name]-[number]}
 \end{figure}
@@ -51,31 +53,35 @@ Screenshots are marked with a label at the TOP of the image:
 #### 2. INLINE-IMAGE (Button/Icon)
 - Marked with **"INLINE-IMAGE"** at top of image
 - Used for small buttons, icons, or UI elements
-- **IMPORTANT**: Uses PDF page reference, NOT individual image file
+- **Uses PDF with page reference**: `images/pdf/his-v3-baru-2025.pdf`
+- **Page number = Image number** (e.g., `009.png` → `page=9`, `044.png` → `page=44`)
 - Format:
 ```latex
-$\vcenter{\hbox{\includegraphics[height=.6cm, page=XX]{images/pdf/his-v3-baru-2025.pdf}}}$
+$\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}}}$
 ```
-- Replace `XX` with the actual page number from the PDF
-- The page number will be noted in the screenshot or context file
 
 ### Section Structure
 ```latex
 \section{Main Title}
-\par Explanatory paragraph...
 
-\subsection{Sub Section}
-\par Sub section explanation...
+\par Penjelasan modul dalam Bahasa Indonesia...
+
+Langkah-langkah melakukan [nama proses]:
+
+\begin{itemize}
+    \item Langkah pertama...
+\end{itemize}
 ```
+- **NO `\subsection`** - use plain text as list introduction instead
 
 ### Itemize (Steps)
 ```latex
 \begin{itemize}
     \item Langkah pertama
-    \item Klik tombol $\vcenter{\hbox{\includegraphics[height=.6cm, page=44]{images/pdf/his-v3-baru-2025.pdf}}}$ untuk menyimpan
+    \item Klik tombol $\vcenter{\hbox{\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}}}$ untuk menyimpan
         \begin{figure}[H]
         \centering
-            \includegraphics[width=\textwidth]{images/module-name/1.jpg}
+            \includegraphics[width=\textwidth,page=1]{images/pdf/module-name.pdf}
         \caption{Deskripsi dalam Bahasa Indonesia}
         \label{fig:module-name-1}
         \end{figure}
@@ -108,12 +114,14 @@ $\vcenter{\hbox{\includegraphics[height=.6cm, page=XX]{images/pdf/his-v3-baru-20
 
 ### FIGURE Images
 - Screenshots stored in: `screenshots/[module-name]/`
-- In LaTeX, path becomes: `images/[module-name]/[number].jpg`
+- In LaTeX, uses module PDF: `images/pdf/[module-name].pdf`
+- **Page number = Image filename number** (e.g., `005.png` → `page=5`)
+- Example: `\includegraphics[width=\textwidth,page=5]{images/pdf/pendaftaran-kunjungan-laboratorium.pdf}`
 
 ### INLINE-IMAGE (Buttons/Icons)
 - Referenced from PDF: `images/pdf/his-v3-baru-2025.pdf`
-- Use `page=XX` parameter to specify the page number
-- Example: `\includegraphics[height=.6cm, page=44]{images/pdf/his-v3-baru-2025.pdf}`
+- **Page number = Image filename number** (e.g., `009.png` → `page=9`)
+- Example: `\includegraphics[height=.6cm, page=9]{images/pdf/his-v3-baru-2025.pdf}`
 
 ## Naming Convention
 - Module name: kebab-case (example: `radiology-visit`)
