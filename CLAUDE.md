@@ -32,20 +32,32 @@ HISv3/
 - ALWAYS use `\par` to start a new paragraph
 - Example: `\par Radiology is a service...`
 
-### Images (Full Width)
+### Image Types
+Screenshots are marked with a label at the TOP of the image:
+
+#### 1. FIGURE (Full Width Screenshot)
+- Marked with **"FIGURE"** at top of image
+- Used for full UI screenshots
+- Format:
 ```latex
 \begin{figure}[H]
 \centering
-    \includegraphics[width=\textwidth]{images/module-name/1.jpg}
-\caption{Image description}
-\label{fig:module-name-1}
+    \includegraphics[width=\textwidth]{images/[module-name]/[number].jpg}
+\caption{Deskripsi gambar dalam Bahasa Indonesia}
+\label{fig:[module-name]-[number]}
 \end{figure}
 ```
 
-### Inline Images (Button/Icon)
+#### 2. INLINE-IMAGE (Button/Icon)
+- Marked with **"INLINE-IMAGE"** at top of image
+- Used for small buttons, icons, or UI elements
+- **IMPORTANT**: Uses PDF page reference, NOT individual image file
+- Format:
 ```latex
-click the button $\vcenter{\hbox{\includegraphics[height=.6cm]{images/module-name/button.jpg}}}$
+$\vcenter{\hbox{\includegraphics[height=.6cm, page=XX]{images/pdf/his-v3-baru-2025.pdf}}}$
 ```
+- Replace `XX` with the actual page number from the PDF
+- The page number will be noted in the screenshot or context file
 
 ### Section Structure
 ```latex
@@ -59,15 +71,15 @@ click the button $\vcenter{\hbox{\includegraphics[height=.6cm]{images/module-nam
 ### Itemize (Steps)
 ```latex
 \begin{itemize}
-    \item First step
-    \item Second step
+    \item Langkah pertama
+    \item Klik tombol $\vcenter{\hbox{\includegraphics[height=.6cm, page=44]{images/pdf/his-v3-baru-2025.pdf}}}$ untuk menyimpan
         \begin{figure}[H]
         \centering
             \includegraphics[width=\textwidth]{images/module-name/1.jpg}
-        \caption{Caption}
-        \label{fig:label}
+        \caption{Deskripsi dalam Bahasa Indonesia}
+        \label{fig:module-name-1}
         \end{figure}
-    \item Third step
+    \item Langkah selanjutnya
 \end{itemize}
 ```
 
@@ -85,14 +97,23 @@ click the button $\vcenter{\hbox{\includegraphics[height=.6cm]{images/module-nam
 ## Workflow
 
 1. **Seeding**: User uploads screenshots to `screenshots/[module-name]/` with sequential names (1.jpg, 2.jpg, etc)
+   - Mark each image at TOP with either **"FIGURE"** or **"INLINE-IMAGE"**
+   - For INLINE-IMAGE: include the PDF page number in the marking
 2. **Context**: User creates context file in `module/[module-name].md`
 3. **Generate**: Run `/generate-section [module-name]`
 4. **Review**: Run `/review [module-name]`
 5. **Export**: Final LaTeX code (in .md files) ready in `sections/`
 
 ## Image Path Convention
+
+### FIGURE Images
 - Screenshots stored in: `screenshots/[module-name]/`
 - In LaTeX, path becomes: `images/[module-name]/[number].jpg`
+
+### INLINE-IMAGE (Buttons/Icons)
+- Referenced from PDF: `images/pdf/his-v3-baru-2025.pdf`
+- Use `page=XX` parameter to specify the page number
+- Example: `\includegraphics[height=.6cm, page=44]{images/pdf/his-v3-baru-2025.pdf}`
 
 ## Naming Convention
 - Module name: kebab-case (example: `radiology-visit`)

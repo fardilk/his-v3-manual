@@ -12,8 +12,13 @@ Review generated LaTeX section for quality assurance.
 ### Format
 - [ ] Every paragraph starts with \par
 - [ ] Figures use [H] placement
-- [ ] Image paths are correct: `images/[module-name]/[n].jpg`
 - [ ] Every figure has unique caption and label
+
+### Image Types
+- [ ] FIGURE images use correct path: `images/[module-name]/[n].jpg`
+- [ ] INLINE-IMAGE uses PDF reference: `images/pdf/his-v3-baru-2025.pdf`
+- [ ] INLINE-IMAGE has correct `page=XX` parameter
+- [ ] Image type matches the marking in source screenshot
 
 ### Content
 - [ ] All screenshots are covered
